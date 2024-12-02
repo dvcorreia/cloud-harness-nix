@@ -18,7 +18,7 @@
       flake-utils,
       cloud-harness-src,
       ...
-    }@inputs:
+    }:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
@@ -43,10 +43,15 @@
       {
         packages = {
           inherit (pkgs) harness-deployment harness-generate harness-application;
+          pythonPackages = {
+            inherit (pkgs.python3.pkgs) cloudharness_model cloudharness_utils;
+          };
         };
 
         devShell = pkgs.mkShell {
           packages = with pkgs; [
+            pythonEnv
+
             harness-deployment
             harness-generate
             harness-application
