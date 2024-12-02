@@ -1,0 +1,8 @@
+# Nix
+result
+
+# OS specific
+.DS_Store
+
+# IDEs
+.vscode
