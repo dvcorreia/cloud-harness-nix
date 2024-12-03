@@ -9,7 +9,7 @@ echo 'use flake "github:dvcorreia/cloud-harness-nix"' > .envrc
 > [!NOTE]  
 > For a reproducible shell, specify the commit revision as shown below:
 > ```console
-> use flake "github:owner/repo?rev=<commit-hash>"
+> use flake "github:dvcorreia/cloud-harness-nix?rev=<commit-hash>"
 > ```
 
 Allowing it by running:
