@@ -1,21 +1,9 @@
 ## Usage
 
-The easier way to use this is to enable the nix flakes experimental feature and use direnv to create the development environment:
+The easier way to use this is to enable the nix flakes experimental feature and create a development shell:
 
 ```console
-echo 'use flake "github:dvcorreia/cloud-harness-nix"' > .envrc
-```
-
-> [!NOTE]  
-> For a reproducible shell, specify the commit revision as shown below:
-> ```console
-> use flake "github:dvcorreia/cloud-harness-nix?rev=<commit-hash>"
-> ```
-
-Allowing it by running:
-
-```console
-direnv allow
+nix develop github:dvcorreia/cloud-harness-nix
 ```
 
 This creates a shell with everything you need to develop [Cloud Harness (CH)](https://github.com/MetaCell/cloud-harness) applications, so you should have available in your path:
@@ -50,4 +38,24 @@ docker is /nix/store/v69vm56w9v74ncyz5lccvmb8cvpsmq6p-docker-27.3.1/bin/docker
 kubectl is /nix/store/4y0isz580qj1gprqihb39jzvq1h3ys8d-kubectl-1.31.2/bin/kubectl
 helm is /nix/store/v0b54sqamjz5hkbbhbbn62rmhy1ynk5a-kubernetes-helm-3.16.3/bin/helm
 skaffold is /nix/store/n4w8wqhfvfns2cfrn7sxhaiynvpqxcc8-skaffold-2.13.2/bin/skaffold
+```
+
+### Direnv
+
+You can also use direnv to create the development environment:
+
+```console
+echo 'use flake "github:dvcorreia/cloud-harness-nix"' > .envrc
+```
+
+> [!NOTE]  
+> For a reproducible shell, specify the commit revision as shown below:
+> ```console
+> use flake "github:dvcorreia/cloud-harness-nix?rev=<commit-hash>"
+> ```
+
+Allowing it by running:
+
+```console
+direnv allow
 ```
