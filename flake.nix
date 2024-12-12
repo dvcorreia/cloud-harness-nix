@@ -65,6 +65,8 @@
             kubectl
             kubernetes-helm
             skaffold
+
+            postgresql # pg tools
           ];
 
           inputsFrom = with pkgs; [
