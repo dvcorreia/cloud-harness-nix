@@ -37,6 +37,8 @@
             pip
             setuptools
             wheel
+
+            psycopg2-binary # Pillow requires it
           ]
         );
       in
