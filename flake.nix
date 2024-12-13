@@ -32,13 +32,12 @@
 
         pythonEnv = pkgs.python3.withPackages (
           ps: with ps; [
+            cloudharness
             cloudharness_model
             cloudharness_utils
             pip
             setuptools
             wheel
-
-            psycopg2-binary # Pillow requires it
           ]
         );
       in

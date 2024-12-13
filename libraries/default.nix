@@ -8,6 +8,14 @@ final: prev: {
       cloudharness_utils = final.callPackage ./cloudharness_utils.nix {
         inherit (final) python3 cloud-harness-src;
       };
+
+      argo-workflows = final.callPackage ./deps/argo-workflows.nix {
+        inherit (final) python3;
+      };
+
+      cloudharness = final.callPackage ./cloudharness_common.nix {
+        inherit (final) python3 cloud-harness-src;
+      };
     };
   };
 }
