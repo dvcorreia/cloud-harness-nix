@@ -24,7 +24,7 @@
       let
         overlays = [
           (final: prev: { inherit cloud-harness-src; })
-          (import ./libraries)
+          (import ./py-pkgs-overlay.nix)
           (import ./tools)
         ];
 
@@ -32,12 +32,16 @@
 
         pythonEnv = pkgs.python3.withPackages (
           ps: with ps; [
-            cloudharness
-            cloudharness_model
-            cloudharness_utils
             pip
             setuptools
             wheel
+
+            cloudharness
+            cloudharness_model
+            cloudharness_utils
+            cloudharness-cli
+
+            cloudharness-django
           ]
         );
       in
