@@ -53,31 +53,29 @@
           };
         };
 
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             pythonEnv
 
             harness-deployment
             harness-generate
             harness-application
-
-            nodejs-slim
-            yarn
-
-            google-cloud-sdk
-
-            docker
-            kubectl
-            kubernetes-helm
-            skaffold
-
-            postgresql # pg tools
           ];
+        };
 
-          inputsFrom = with pkgs; [
+        devShells.django-app = pkgs.mkShell {
+          packages = with pkgs; [
+            # cli tools
             harness-deployment
             harness-generate
             harness-application
+
+            # backend dependencies
+            pythonEnv
+
+            # frontend dependencies
+            nodejs-slim
+            yarn
           ];
 
           # https://github.com/NixOS/nixpkgs/issues/314713
