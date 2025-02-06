@@ -76,6 +76,11 @@
             # frontend dependencies
             nodejs-slim
             yarn
+
+            # gcloud sdk
+            (google-cloud-sdk.withExtraComponents [
+              google-cloud-sdk.components.gke-gcloud-auth-plugin
+            ])
           ];
 
           # https://github.com/NixOS/nixpkgs/issues/314713
