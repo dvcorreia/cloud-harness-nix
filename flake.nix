@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     cloud-harness-src = {
-      url = "github:MetaCell/cloud-harness";
+      url = "github:MetaCell/cloud-harness?ref=develop";
       flake = false;
     };
   };
