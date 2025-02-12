@@ -2,7 +2,7 @@
 
 python3.pkgs.buildPythonPackage {
   pname = "cloudharness_utils";
-  version = "2.4.0";
+  version = "2.5.0";
   src = "${cloud-harness-src}/libraries/cloudharness-utils";
 
   propagatedBuildInputs = with python3.pkgs; [

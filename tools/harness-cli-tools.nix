@@ -21,7 +21,7 @@ let
     name: script:
     python3.pkgs.buildPythonApplication {
       pname = name;
-      version = "2.3.0";
+      version = "2.5.0";
       src = "${cloud-harness-src}/tools/deployment-cli-tools";
 
       propagatedBuildInputs = commonDeps;
